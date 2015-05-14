@@ -10,7 +10,7 @@ class Game
     puts "Let's play tic-tac-toe!"
     @board.display_board
     puts "Player1 is X, Player 2 is O"
-    until @board.win? = false
+    until @board.win?
       @board.player1_selection
       @board.display_board
       @board.player2_selection
