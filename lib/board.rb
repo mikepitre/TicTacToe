@@ -46,6 +46,7 @@ class Board
     elsif take_selection == 9
       @space9 = "X"
     end
+  end
 
     def player2_selection
     puts "Player2, what position would you like to take?"
@@ -70,6 +71,43 @@ class Board
       @space9 = "O"
     end
     end
-  end
+
+    def win?
+      if @space1 == "X" && @space2 == "X" && @space3 == "X"
+        puts "Player 1 wins!"
+      elsif @space4 == "X" && @space5 == "X" && @space6 == "X"
+        puts "Player 1 wins!"
+      elsif @space7 == "X" && @space8 == "X" && @space9 == "X"
+        puts "Player 1 wins!"
+      elsif @space1 == "X" && @space5 == "X" && @space9 == "X"
+        puts "Player 1 wins!"
+      elsif @space3 == "X" && @space5 == "X" && @space7 == "X"
+        puts "Player 1 wins!"
+      elsif @space1 == "X" && @space4 == "X" && @space7 == "X"
+        puts "Player 1 wins!"
+      elsif @space2 == "X" && @space5 == "X" && @space8 == "X"
+        puts "Player 1 wins!"
+      elsif @space3 == "X" && @space6 == "X" && @space9 == "X"
+        puts "Player 1 wins!"
+      elsif @space1 == "O" && @space2 == "O" && @space3 == "O"
+        puts "Player 2 wins!"
+      elsif @space4 == "O" && @space5 == "O" && @space6 == "O"
+        puts "Player 2 wins!"
+      elsif @space7 == "O" && @space8 == "O" && @space9 == "O"
+        puts "Player 2 wins!"
+      elsif @space1 == "O" && @space5 == "O" && @space9 == "O"
+        puts "Player 2 wins!"
+      elsif @space3 == "O" && @space5 == "O" && @space7 == "O"
+        puts "Player 2 wins!"
+      elsif @space1 == "O" && @space4 == "O" && @space7 == "O"
+        puts "Player 2 wins!"
+      elsif @space2 == "O" && @space5 == "O" && @space8 == "O"
+        puts "Player 2 wins!"
+      elsif @space3 == "O" && @space6 == "O" && @space9 == "O"
+        puts "Player 2 wins!"
+      end
+    end
+
+
 end
 
