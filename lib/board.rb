@@ -10,10 +10,13 @@ class Board
     @space7 = 7
     @space8 = 8
     @space9 = 9
+    @moves_counter = 0
   end
 
   def display_board
     puts """
+
+          Moves: #{@moves_counter}
 
           #{@space1} | #{@space2} | #{@space3}
           ----------
@@ -46,9 +49,10 @@ class Board
     elsif take_selection == 9
       @space9 = "X"
     end
+    @moves_counter += 1
   end
 
-    def player2_selection
+  def player2_selection
     puts "Player2, what position would you like to take?"
     take_selection = gets.chomp.to_i
     if take_selection == 1
@@ -70,44 +74,76 @@ class Board
     elsif take_selection == 9
       @space9 = "O"
     end
-    end
+    @moves_counter += 1
+  end
 
     def win?
       if @space1 == "X" && @space2 == "X" && @space3 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space4 == "X" && @space5 == "X" && @space6 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space7 == "X" && @space8 == "X" && @space9 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space1 == "X" && @space5 == "X" && @space9 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space3 == "X" && @space5 == "X" && @space7 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space1 == "X" && @space4 == "X" && @space7 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space2 == "X" && @space5 == "X" && @space8 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space3 == "X" && @space6 == "X" && @space9 == "X"
         puts "Player 1 wins!"
+        return true
       elsif @space1 == "O" && @space2 == "O" && @space3 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space4 == "O" && @space5 == "O" && @space6 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space7 == "O" && @space8 == "O" && @space9 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space1 == "O" && @space5 == "O" && @space9 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space3 == "O" && @space5 == "O" && @space7 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space1 == "O" && @space4 == "O" && @space7 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space2 == "O" && @space5 == "O" && @space8 == "O"
         puts "Player 2 wins!"
+        return true
       elsif @space3 == "O" && @space6 == "O" && @space9 == "O"
         puts "Player 2 wins!"
+        return true
+      elsif @moves_counter == 9
+        puts "It's a draw! Nobody wins!"
+        return true
       end
     end
 
+    def play_again?
+      puts "Would you like to play again? (yes or no) > "
+      response = gets.chomp.downcase
+      if response == "yes"
+        @board = Board.new
+        @board.display_board
+        @start
+      else
+        puts "Thanks for playing! Come back soon!"
+        exit
+      end
+    end
 
 end
 
