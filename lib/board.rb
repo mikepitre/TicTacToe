@@ -30,25 +30,28 @@ class Board
   def player1_selection
     puts "Player1, what position would you like to take?"
     take_selection = gets.chomp.to_i
-    if take_selection == 1
-      @space1 = "X"
-    elsif take_selection == 2
-      @space2 = "X"
-    elsif take_selection == 3
-      @space3 = "X"
-    elsif take_selection == 4
-      @space4 = "X"
-    elsif take_selection == 5
-      @space5 = "X"
-    elsif take_selection == 6
-      @space6 = "X"
-    elsif take_selection == 7
-      @space7 = "X"
-    elsif take_selection == 8
-      @space8 = "X"
-    elsif take_selection == 9
-      @space9 = "X"
-    end
+      if take_selection == 1
+        @space1 = "X"
+      elsif take_selection == 2
+        @space2 = "X"
+      elsif take_selection == 3
+        @space3 = "X"
+      elsif take_selection == 4
+        @space4 = "X"
+      elsif take_selection == 5
+        @space5 = "X"
+      elsif take_selection == 6
+        @space6 = "X"
+      elsif take_selection == 7
+        @space7 = "X"
+      elsif take_selection == 8
+        @space8 = "X"
+      elsif take_selection == 9
+        @space9 = "X"
+      else
+        puts "Not a valid selection, please choose an available position 1-9. > "
+        player1_selection
+      end
     @moves_counter += 1
   end
 
@@ -73,6 +76,9 @@ class Board
       @space8 = "O"
     elsif take_selection == 9
       @space9 = "O"
+    else
+        puts "Not a valid selection, please choose an available position 1-9. > "
+        player2_selection
     end
     @moves_counter += 1
   end
