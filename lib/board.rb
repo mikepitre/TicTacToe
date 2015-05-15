@@ -51,6 +51,7 @@ class Board
       else
         puts "Not a valid selection, please choose an available position 1-9. > "
         player1_selection
+        @moves_counter -=1
       end
     @moves_counter += 1
   end
@@ -79,6 +80,7 @@ class Board
     else
         puts "Not a valid selection, please choose an available position 1-9. > "
         player2_selection
+        @moves_counter -=1
     end
     @moves_counter += 1
   end
