@@ -131,19 +131,5 @@ class Board
         return true
       end
     end
-
-    def play_again?
-      puts "Would you like to play again? (yes or no) > "
-      response = gets.chomp.downcase
-      if response == "yes"
-        @board = Board.new
-        @board.display_board
-        @start
-      else
-        puts "Thanks for playing! Come back soon!"
-        exit
-      end
-    end
-
 end
 

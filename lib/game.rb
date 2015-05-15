@@ -10,8 +10,6 @@ class Game
     puts "Let's play tic-tac-toe!"
     @board.display_board
     puts "Player1 is X, Player 2 is O"
-    # require 'irbtools/binding'
-    # binding.irb
     while @board.win? == nil
       @board.player1_selection
       @board.display_board
