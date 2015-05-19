@@ -29,7 +29,6 @@ class Game
     response = gets.chomp.downcase
     if response == "yes"
       @board = Board.new
-      @board.display_board
       start
     else
       puts "Thanks for playing! Come back soon!"

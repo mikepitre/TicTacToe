@@ -30,7 +30,7 @@ class Board
   def player1_selection
     puts "Player1, what position would you like to take?"
     take_selection = gets.chomp.to_i
-      if take_selection == 1
+      if take_selection == 1 #&& (@space1 != "X" || "O")
         @space1 = "X"
       elsif take_selection == 2
         @space2 = "X"
